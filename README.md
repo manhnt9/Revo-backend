@@ -19,3 +19,19 @@ Then install SQLite3
 $ bundle install
 ```
 
+### 3. Start application
+```
+$ bin/rails server -p 3001
+```
+
+### 4. API specification
+
+- Routes are in api namespace, for example: /api/xxx
+- All routes require authentication
+
+```
+POST /login: authenticate an user
+GET /logout: remove user's authentication from server
+POST /forms: submit a form
+GET /forms: list student's registration forms
+```
