@@ -1,4 +1,4 @@
-# RevoEnglish backend
+# Revo backend
 
 ## Getting started
 
