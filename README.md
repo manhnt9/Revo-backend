@@ -11,6 +11,7 @@ $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804B
 $ curl -sSL https://get.rvm.io | grep -v __rvm_print_headline | bash -s stable
 $ gem install rails
 ```
+Then install SQLite3
 
 ### 2. Configure project
 
