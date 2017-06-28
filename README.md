@@ -29,9 +29,10 @@ $ bin/rails server -p 3001
 - Routes are in api namespace, for example: /api/xxx
 - All routes require authentication
 
-```
-POST /login: authenticate an user
-GET /logout: remove user's authentication from server
-POST /forms: submit a form
-GET /forms: list student's registration forms
-```
+Method | Path | Description
+--- | --- | ---
+POST | /login | Authenticate an user
+GET | /logout | Remove user's authentication from server
+POST | /forms | Submit a form
+GET | /forms | List student's registration forms
+
