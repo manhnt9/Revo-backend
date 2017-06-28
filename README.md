@@ -12,3 +12,9 @@ $ curl -sSL https://get.rvm.io | grep -v __rvm_print_headline | bash -s stable
 $ gem install rails
 ```
 
+### 2. Configure project
+
+```
+$ bundle install
+```
+
