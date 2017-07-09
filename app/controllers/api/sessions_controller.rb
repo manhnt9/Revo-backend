@@ -5,8 +5,8 @@ class Api::SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      reply = {'result': 'success'}
+      session = Session.create!({ user_id: user.id });
+      reply = {'token': session.token}
       render :json => reply
     else
       reply = {'result': 'failure'}

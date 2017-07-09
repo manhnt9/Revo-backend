@@ -21,3 +21,5 @@
 
 # Ignore vim's swap files
 *.swp
+
+db/migrate/*
