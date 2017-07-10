@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20170710042916) do
     t.string "email"
     t.string "social"
     t.string "course"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "note"
   end
 
   create_table "students", force: :cascade do |t|
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170710042916) do
     t.string "email"
     t.string "social"
     t.string "course"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
