@@ -1,16 +1,14 @@
 class Api::FormController < ApplicationController
+  skip_before_action :require_login, only: [:create]
+
   def index
-    if Session.find_by_token(params[:token])
-      forms = Form.all
-      render :json => forms.to_json()
-    end
+    forms = Form.all
+    render :json => forms.to_json()
   end
 
   def show
-    if Session.find_by_token(params[:token])
-      form = Form.find_by_id(params[:id])
-      render :json => form.to_json()
-    end
+   form = Form.find_by_id(params[:id])
+   render :json => form.to_json()
   end
 
   def create
