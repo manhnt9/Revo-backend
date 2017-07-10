@@ -1,5 +1,7 @@
 class Api::StudentController < ApplicationController
   def show
+    student = Student.find_by_id(params[:id])
+    render :json => student.to_json()
   end
   
   def create
