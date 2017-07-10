@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post '/form/', to: 'form#create'
     post '/session/', to: 'session#create'
     delete '/session/', to: 'session#destroy'
+    get '/student/:id', to: 'student#show'
     post '/student/', to: 'student#create'
   end
 end
