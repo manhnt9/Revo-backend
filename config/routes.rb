@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  resources :forms
+  resources :students
   namespace :api, defaults: { format: :json } do
-    get '/forms/', to: 'forms#index'
+    get '/form/', to: 'form#index'
+    get '/form/:id', to: 'form#show'
+    post '/form/', to: 'form#create'
+    post '/session/', to: 'session#create'
+    delete '/session/', to: 'session#destroy'
+    post '/student/', to: 'student#create'
   end
 end
