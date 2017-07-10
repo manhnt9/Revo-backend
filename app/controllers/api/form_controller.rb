@@ -1,7 +1,7 @@
 class Api::FormController < ApplicationController
   def index
-		reply = { 'test': 1234 }
-		render :json => reply
+    forms = Form.all
+    render :json => forms.to_json()
   end
 
   def create
