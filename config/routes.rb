@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :forms
-  resources :students
   namespace :api, defaults: { format: :json } do
     get '/form/', to: 'form#index'
     get '/form/:id', to: 'form#show'
