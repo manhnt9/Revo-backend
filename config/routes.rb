@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     post '/student/', to: 'student#create'
     get '/fee/', to: 'fee#index'
     patch '/fee/', to: 'fee#update'
+    get '/presence/', to: 'presence#index'
+    patch '/presence/', to: 'presence#update'
   end
 end
