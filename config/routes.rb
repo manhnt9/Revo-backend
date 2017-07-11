@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get '/fee/', to: 'fee#index'
     patch '/fee/', to: 'fee#update'
     get '/presence/', to: 'presence#index'
-    patch '/presence/', to: 'presence#update'
+    get '/course/', to: 'course#index'
+    post '/presence/', to: 'presence#create'
+    delete '/presence/', to: 'presence#destoy'
   end
 end
