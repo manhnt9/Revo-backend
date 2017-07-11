@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     get '/presence/', to: 'presence#index'
     get '/course/', to: 'course#index'
     post '/presence/', to: 'presence#create'
-    delete '/presence/', to: 'presence#destoy'
+    delete '/presence/', to: 'presence#destroy'
   end
 end

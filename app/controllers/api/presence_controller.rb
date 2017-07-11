@@ -4,6 +4,7 @@ class Api::PresenceController < ApplicationController
     students = ActiveRecord::Base.connection.execute(sql)
 
     presence = Presence.find_by_date(params[:date])
+    presence = nil
 
     if presence == nil
       result = []
@@ -12,32 +13,32 @@ class Api::PresenceController < ApplicationController
         course: params[:course], presence: false})
       end
       render :json => result.to_json()
-      return
     else
       presence = presence.to_json()
-    end
-    
-    result = presence
-    students.each do |student|
-      presence.each do |pre|
-        if pre.student == student.ind
-          result.push({ id: student[0], name: student[1],
-          course: params[:course], presence: true })
-          p 'test'
-        else
-          result.push({ id: student[0], name: student[1],
-          course: params[:course], presence: false})
-          p 'test'
+      result = presence
+      students.each do |student|
+        presence.each do |pre|
+          if pre.student == student.ind
+            result.push({ id: student[0], name: student[1],
+            course: params[:course], presence: true })
+            p 'test'
+          else
+            result.push({ id: student[0], name: student[1],
+            course: params[:course], presence: false})
+            p 'test'
+          end
         end
       end
+      render :json => result.to_json()
     end
-
-    render :json => result.to_json()
   end
 
-  def create 
+  def create
+    Presence.create!({ student: params[:student], course: params[:course],
+    date: params[:date], presence: true })
   end
 
-  def delete 
+  def destroy
+    Presence.find_by_student_and_course_and_date(params[:student], params[:course], params[:date]).destroy()
   end
 end
