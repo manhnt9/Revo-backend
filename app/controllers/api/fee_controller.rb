@@ -4,10 +4,9 @@ class Api::FeeController < ApplicationController
     render :json => fee.to_json()
   end
 
-  def create
-    Fee.create!({ student: params[:student_id], course: params[:course_id]});
-  end
-
-  def destroy
+  def update
+    fee = Fee.find_by_student(params[:student])
+    fee.has_paid = !fee.has_paid
+    fee.save()
   end
 end

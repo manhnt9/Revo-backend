@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     get '/student/:id', to: 'student#show'
     post '/student/', to: 'student#create'
     get '/fee/', to: 'fee#index'
-    post '/fee/', to: 'fee#create'
-    delete '/fee/', to: 'fee#destroy'
+    patch '/fee/', to: 'fee#update'
   end
 end
