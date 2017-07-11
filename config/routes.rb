@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     delete '/session/', to: 'session#destroy'
     get '/student/:id', to: 'student#show'
     post '/student/', to: 'student#create'
+    get '/fee/', to: 'fee#index'
+    post '/fee/', to: 'fee#create'
+    delete '/fee/', to: 'fee#destroy'
   end
 end

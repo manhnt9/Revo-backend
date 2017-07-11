@@ -54,4 +54,12 @@ ActiveRecord::Schema.define(version: 20170710125503) do
     t.string "token"
   end
 
+  create_table "fees", force: :cascade do |t|
+    t.string "student"
+    t.string "course"
+    t.boolean "has_paid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
