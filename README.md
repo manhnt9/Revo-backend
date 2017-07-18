@@ -24,15 +24,3 @@ $ bundle install
 $ bin/rails server -p 3002
 ```
 
-### 4. API specification
-
-- Routes are in api namespace, for example: /api/xxx
-- All routes require authentication
-
-Method | Path | Description
---- | --- | ---
-POST | /login | Authenticate an user
-GET | /logout | Remove user's authentication from server
-POST | /forms | Submit a form
-GET | /forms | List student's registration forms
-
