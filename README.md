@@ -21,7 +21,7 @@ $ bundle install
 
 ### 3. Start application
 ```
-$ bin/rails server -p 3001
+$ bin/rails server -p 3002
 ```
 
 ### 4. API specification
