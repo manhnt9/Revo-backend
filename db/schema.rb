@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710125503) do
+ActiveRecord::Schema.define(version: 20170718184001) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "student"
+    t.string "course"
+    t.string "one"
+    t.string "two"
+    t.string "three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fees", force: :cascade do |t|
+    t.string "student"
+    t.string "course"
+    t.boolean "has_paid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "forms", force: :cascade do |t|
     t.string "name"
@@ -22,6 +40,14 @@ ActiveRecord::Schema.define(version: 20170710125503) do
     t.string "course"
     t.string "note"
     t.boolean "approved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "presences", force: :cascade do |t|
+    t.string "student"
+    t.string "course"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,22 +78,6 @@ ActiveRecord::Schema.define(version: 20170710125503) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
-  end
-
-  create_table "fees", force: :cascade do |t|
-    t.string "student"
-    t.string "course"
-    t.boolean "has_paid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "presences", force: :cascade do |t|
-    t.string "student"
-    t.string "course"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
