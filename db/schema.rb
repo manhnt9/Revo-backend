@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170718184001) do
 
   create_table "fees", force: :cascade do |t|
     t.string "student"
+    t.string "student_name"
     t.string "course"
     t.boolean "has_paid"
     t.datetime "created_at", null: false

@@ -12,6 +12,6 @@ class Api::StudentController < ApplicationController
 
     form.approved = true
     form.save
-    Fee.create!({ student: student.id, course: student.course, has_paid: false})
+    Fee.create!({ student: student.id, student_name: student.name, course: student.course, has_paid: false})
   end
 end
